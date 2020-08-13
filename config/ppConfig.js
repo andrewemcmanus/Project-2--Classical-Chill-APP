@@ -31,3 +31,4 @@ passport.use(new localStategy({
     .catch(cb());
 }
 ))
+module.exports = passport;
