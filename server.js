@@ -30,10 +30,18 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // flash for temporary messages to the user
-app.use(flash());
+app.use(flash());//put flash after passport
+
+//middleware to have out messages accessible for every view
+app.use((req, res, next)=>{
+  //before every route, we will attach our user to res.local
+  res.local.alerts = req.flash();
+  res.local.currentUser = req.user;
+  next()
+})
 
 app.get('/', (req, res) => {
-  res.render('index');
+  res.render('index' { alert: req.flash()});// send alert
 });
 
 app.get('/profile', (req, res) => {

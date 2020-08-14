@@ -11,7 +11,7 @@ router.get('/login', (req, res) => {
   res.render('auth/login');
 });
 
-router.post('/signup', (req, res) => {
+router.post('/signup', (req, res) => {//if user signes up for fist time 
   console.log(req.body);
   db.user.findOrCreate({
     where: { email: req.body.email },
@@ -51,7 +51,7 @@ router.post('/login', passport.authenticate('local', {
   successRedirect: '/',
   failureRedirect: '/auth/login',
   successFlash: 'Welcome back.',
-  failureFlash: 'Either email or password is incorrect. Please try again.'
+  failureFlash: 'Either email or password is incorrect. Please try again.'//if theres a failure, send them back
 }));
 
 router.get('/logout', (req, res) => {

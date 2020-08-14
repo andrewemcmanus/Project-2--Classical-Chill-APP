@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
       validate:{
         len:{
           args:[1, 99],
-          msg:'Name must be 1 to 99 characters'
+          msg:'Name must be 1 to 99 characters'//name
         }
       }
     },
@@ -28,7 +28,7 @@ module.exports = (sequelize, DataTypes) => {
       type:DataTypes.STRING,
       validate:{
         isEmail:{
-          msg:"Invalid Email"
+          msg:"Invalid Email"//email
         }
       }
     },
@@ -37,7 +37,7 @@ module.exports = (sequelize, DataTypes) => {
       validate:{
         len:{
           args:[8, 99],
-          msg:'Password must be between 8 to 99 characters'
+          msg:'Password must be between 8 to 99 characters'//password
         }
       }
     }
@@ -68,3 +68,5 @@ module.exports = (sequelize, DataTypes) => {
   return user;
   
 };
+
+//user js to routes
