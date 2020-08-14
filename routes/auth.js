@@ -35,7 +35,7 @@ router.post('/signup', (req, res) => {//if user signes up for fist time
       // Email already exist
       console.log('Email already exist');
       // FLASH
-      req.flash('Email already exist. Please try again.');
+      req.flash("Error",'Email already exist. Please try again.');
       res.redirect('/auth/signup');
     }
   })
