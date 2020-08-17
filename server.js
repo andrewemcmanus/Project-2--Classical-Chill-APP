@@ -7,6 +7,7 @@ const SECRET_SESSION = process.env.SECRET_SESSION;
 const passport = require('./config/ppConfig');
 const flash = require('connect-flash');
 
+require('./utilities/spotifyApi')
 //require the authorizarization middleware at the top of the page
 const isLoggedIn = require('./middleware/isLoggedIn')
 
@@ -52,6 +53,7 @@ app.get('/profile', isLoggedIn, (req, res) => {
 });
 
 app.use('/auth', require('./routes/auth'));
+app.use('/tracks', require('./routes/tracks'));//mounting 
 
 
 
