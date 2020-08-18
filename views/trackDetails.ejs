@@ -1,0 +1,13 @@
+<% if (result) { %> 
+      
+        <div>                 
+            <h2><%=result.name%></h2>  
+            <h2><%=result.track_number%></h2>
+            <img src="<%=result.album.images[0].url%>"alt="hello">
+        </div> 
+        <audio controls>
+            <source src="<%=result.preview_url%>" />
+        </audio>
+<% } else { %> 
+    <div>track not found</div>
+<% } %> 

@@ -16,7 +16,7 @@ axios.post('https://accounts.spotify.com/api/token',
        } 
        
 }).then((response)=>{                    
-    token = response.data.access_token//use search query in here
+    token = response.data.access_token//use search query in
     console.log(token)
   })
 .catch(err=>{

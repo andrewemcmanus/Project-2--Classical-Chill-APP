@@ -53,7 +53,7 @@ app.get('/profile', isLoggedIn, (req, res) => {
 });
 
 app.use('/auth', require('./routes/auth'));
-app.use('/tracks', require('./routes/tracks'));//mounting 
+app.use('/track', require('./routes/track'));//mounting 
 
 
 

@@ -12,6 +12,9 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+
+      models.user.belongsToMany(models.track, {through: "usersTracks"})
+      models.user.hasMany(models.comment)
     }
   };
   user.init({
@@ -50,6 +53,7 @@ module.exports = (sequelize, DataTypes) => {
     //hash password for us
     let hash = bcrypt.hashSync(pendingUser.password, 12);// no more than 12
     pendingUser.password = hash;
+  })
     
     user.prototype.validPassword = function(passwordTyped){//is password typed in same as password saved in db?
       let correctPassword = bcrypt.compareSync(passwordTyped, this.password)//password in db
@@ -57,7 +61,7 @@ module.exports = (sequelize, DataTypes) => {
       return correctPassword;
     }
 
-  })
+  
 //remove the password before it gets serialized
   user.prototype.toJSON = function() {
     let userData = this.get();
