@@ -1,16 +1,16 @@
 <h2>Profile Page</h2>
 
 <h3>Welcome to your PROFILE</h3>
-<% if (tracks) { %> 
-    <% tracks.forEach(track =>{ %>     
-        <div> 
-            <Ul>   
-                <Li>          
-                    <a href="/track/<%=track.id%>"><h2><%=track.name%></h2></a> 
-                </Li>
-            </Ul> 
-        </div> 
-    <% }); %> 
+<% if (results) { %> 
+       
+    <div> 
+        <Ul>   
+            <Li>          
+                <a href="/profile/<%=result.id%>"><h2><%=.result.name%></h2></a> 
+            </Li>
+        </Ul> 
+    </div> 
+   
 <% } else { %> 
     <div>track not found</div>
 <% } %> 

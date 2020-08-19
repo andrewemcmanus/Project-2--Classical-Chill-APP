@@ -90,7 +90,29 @@ router.get('/:id', (req, res)=>{
         }
     })
 })
+router.get('/', (req, res)=> {
+    db.track.findAll()
+    .then(response =>{
+        res.render('profile', {response})
+    })
+})
 
+router.post('/', (req, res) => {
+    console.log('line 101', req.body)
+    db.track.findOrCreate({
+        where: {name: req.body.name },
+         defaults: {trackid: req.body.trackId}
+    })
+    .then(([response, created]) => {
+            res.redirect('profile');
+            
+            
+    })
+    .catch(err =>{
+        console.log('error', err);
+        res.send('sorry nodata');
+    })
+}) 
 // var options = {
     //   'method': 'GET',
     //   'url': 'https://api.spotify.com/v1/search?query=beethoven&type=artist&offset=0&limit=20',
