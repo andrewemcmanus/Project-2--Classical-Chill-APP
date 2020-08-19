@@ -54,8 +54,8 @@ app.get('/profile', isLoggedIn, (req, res) => {
 
 app.use('/auth', require('./routes/auth'));
 app.use('/track', require('./routes/track'));//mounting 
-
-
+// app.use('/comment', require('./routes/comment'))
+app.use('/faves', require('./routes/faves')) 
 
 
 const port = process.env.PORT || 3000;

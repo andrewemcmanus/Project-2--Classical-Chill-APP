@@ -2,7 +2,6 @@
       
         <div>                 
             <h2><%=result.name%></h2>  
-            <h2><%=result.track_number%></h2>
             <img src="<%=result.album.images[0].url%>"alt="hello">
         </div> 
         <audio controls>
@@ -11,3 +10,14 @@
 <% } else { %> 
     <div>track not found</div>
 <% } %> 
+
+
+
+
+    <div class="faves">
+      <form method="POST" action="/profile">
+        <input hidden type="text" name="name" value="<%= result.name %>">
+        <button class="btn btn-primary" type="submit">Add to Favorites</button>
+      </form>
+    </div>
+  

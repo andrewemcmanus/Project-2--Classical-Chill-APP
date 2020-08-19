@@ -21,11 +21,13 @@
     "express": "^4.17.1",
     "express-ejs-layouts": "^2.5.0",
     "express-session": "^1.17.1",
+    "moment": "^2.27.0",
     "morgan": "^1.9.1",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "pg": "^7.11.0",
     "request": "^2.88.2",
+    "rowdy-logger": "^1.0.2",
     "sequelize": "^5.8.12",
     "session": "^0.1.0"
   }

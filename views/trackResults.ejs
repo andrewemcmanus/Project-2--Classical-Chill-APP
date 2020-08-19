@@ -1,7 +1,11 @@
 <% if (tracks) { %> 
     <% tracks.forEach(track =>{ %>     
-        <div>                 
-            <a href="/track/<%=track.id%>"><h2><%=track.name%></h2></a>    
+        <div> 
+            <Ul>   
+                <Li>          
+                    <a href="/track/<%=track.id%>"><h2><%=track.name%></h2></a> 
+                </Li>
+            </Ul> 
         </div> 
     <% }); %> 
 <% } else { %> 

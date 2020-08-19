@@ -1,6 +1,11 @@
 body{
+  margin: 0 auto;
   background-color: rgb(34, 31, 31);
   color: white;
+  text-align: center;
+  text-decoration: none;
+  
+  
 }
 nav ul li {
   text-decoration: none;
@@ -12,6 +17,16 @@ h1 {
   color: chartreuse;
 }
 img{
-  height: 200px;
-  width: 200px;
+  height: 300px;
+  weight: 300px;
+  border: oldlace 3px groove;
+  
+}
+h2 {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+audio{
+  margin: 10px;
 }

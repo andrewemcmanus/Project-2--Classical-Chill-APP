@@ -86,7 +86,7 @@ router.get('/:id', (req, res)=>{
                 // console.log('error', err)
             })
         }catch{
-            console.log('this is wrong')
+            console.log('this')
         }
     })
 })
