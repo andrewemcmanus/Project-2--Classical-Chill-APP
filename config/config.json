@@ -13,6 +13,6 @@
     "database": "project_2",
     "host": "127.0.0.1",
     "dialect": "postgres",
-    "use_env_variable":"postgres://bhfehqvhphlbaj:87a21fd278a19bf1a835857db861b51230dc5b09de27adc8055b5a19d5b3a7ed@ec2-52-22-94-132.compute-1.amazonaws.com:5432/daff7kf2fiuhe5"
+    "use_env_variable": "https://dashboard.heroku.com/apps/classical-chill"
   }
 }
