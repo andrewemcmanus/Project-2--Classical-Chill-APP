@@ -26,7 +26,7 @@ router.post('/:id', (req, res)=>{
 })
 
 router.put("/:id", (req, res)=>{
-    db.comment.update({// what do you want to updaye whrn you updat? which columns
+    db.comment.update({// what do you want to update whrn you updat? which columns
         name: req.body.name,
         content: req.body.content,
         apiTrackId: req.params.id

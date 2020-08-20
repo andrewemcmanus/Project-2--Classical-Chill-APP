@@ -13,8 +13,8 @@ router.get('/login', (req, res) => {
 
 router.post('/signup', (req, res) => {//if user signes up for fist time 
   console.log(req.body);
-  db.user.findOrCreate({
-    where: { email: req.body.email },
+  db.user.findOrCreate({//if there isnt one, create one
+    where: { email: req.body.email }, 
     defaults: { 
       name: req.body.name,
       password: req.body.password

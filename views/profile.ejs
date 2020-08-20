@@ -1,10 +1,11 @@
-<h2>Profile Page</h2>
+
 
 <h3>Welcome to your PROFILE, </h3>
+<h2>Your Favorite Works!</h2>
 <%user.tracks.forEach( fave=> {%>
     
     <div class="delete">
-        <a href="/track/<%=fave.apiTrackId%>"><h5><%=fave.composer%></h5></a>
+        <a href="/track/<%=fave.apiTrackId%>"><h4><%=fave.composer%></h4></a>
             
             <form method="POST" action="/track/<%=fave.id%>?_method=DELETE">
               <button class="btn btn-primary" type="submit">delete</button>

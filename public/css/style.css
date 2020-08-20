@@ -1,37 +1,52 @@
 body{
   margin: 0 auto;
-  background-color: #494d58;
-  color:#a0d2eb;
+  background-image: url("https://lh3.googleusercontent.com/pJlG9ihtQlLlGoRfPUhybuiu_DK2Gf-lU7qMXY2kzosKZMqPXDKzecUjfF-CE8e6-MKkSz7oym9gedrlUGWSnIdwRt5K23OBdGEqOpzhY-QmUOblg4DFb1x9dkBsUzAOc9Lw1_ERxNHGnltSon7koxX93Tfxtb_eDT330tPhwFuqbJgdBgrAHiSyL3HNvXyAq7F9L7wYfooJDm-NT9HGZl99vA5VtVUGXO49G-gqN2bYWwNuzlJ42dr4vKscYKYtwIxKevQRGiCxCGgxit6HTR7kii7s2Xo-PxNeQSabrW9HJ5wVpMhsgZuviRrFHfHqotbtavprRV1jTjv4y_yK7hQDDdJ-mSOAnEyFKcBVZ3NOAXk2mSrAan-NEsgEnkvUHQGUZQwHiyjfohhX5ZDqS38JEavFeeUDgie1SDo6i7BF1h5W9RWfRRHhs4pcjqIxfwTjUJPuAjUw_l6uA-XdKFsUYDTVq3K7vIorNojhUUQzEhUcTDUJ7mXQ3EqtQFxga9uUEpIkqS0QApWDiWZNmJoVVXCCje1p8AKeuV17cWuvwoPYquhEQyUSR7BYwhzX0Tm_7F3H091zZYQKKdxjiub9koX97296l4qmpP70afSN4LTGUUpG-MLTp339M2sn4_FtuI3EUcRwWjjTg9aH8zmqtiX21R3A8iT-3kkbd5Qm9LS_cXnnfv-880kR=w1380-h920-no?authuser=0");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #a0d2eb;
+  text-shadow: #1d102c 2px 2px 6px;
   text-align: center;
   text-decoration: none;
-  background-image:"https://photos.google.com/search/_tra_/photo/AF1QipNEce_WoQOUObh8ef7S-OnHPqlS1HPhgcjP84P9";
-  ;
-  
+  font-family: harbour;
 }
+    body:link {
+      text-decoration: none;
+  
+    }
+    body:visited {
+      text-decoration: none;
+    }
+    
 nav ul li {
   text-decoration: none;
   display: inline-block;
   margin-right: .3em;
  
 }
+label{
+  font-size: 20px;
+}
 .nav{
-  background-color: #e5eaf5;
-  padding: 50px;
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(210,169,218,1) 43%, rgba(30,184,163,1) 100%);
+  padding: 30px;
   margin:0px;
+  border: groove 5px#a0d2eb;
   
 }
-
+#q{
+  background-color: #a0d2eb;
+}
 
 .main-comment{
-  width: 200px;
-  height: 150px;
+  width: 250px;
+  height: 200px;
   background:  #a0d2eb;
 }
 
 
-img{
-  height: 300px;
-  weight: 300px;
+#album{
+  height: 350px;
+  width: 350px;
   border: rgb(26, 6, 39) 6px groove;
   border-radius: 15px 0px;
   
@@ -40,6 +55,7 @@ h2 {
   color: #a0d2eb;
   text-decoration: none;
   font-size: 20px;
+  margin: 20px;
 }
 audio{
   margin: 10px;
@@ -51,19 +67,20 @@ audio{
   height:100px ;
   text-align: center;
   padding:20px;
+  font-size: 40px;
   
 }
 .comments{
- 
+  
   font-style: italic;
   width: 400px;
   height: 50px;
   margin: 0 auto;
   padding: 15px;
-
+  
   
 }
-    
+
 .faves{
   margin: 10px;
 }
@@ -74,12 +91,11 @@ footer{
   background-color: #e5eaf5;
   
 }
-.fa-{
+.icon-bar a {
   
-  width: 60px;
-  line-height: 60px;
-  margin: 10px;
-
+  size: 400%;
+  margin: 20px;
+  
 }
 .com-details{
   float:left;
@@ -92,7 +108,10 @@ footer{
 }
 
 .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited, .nav-link:active {
-  background-color: #8064A2 !important;
+  background: #8064A2 ;
+}
+.nav-link.active{
+  background: #8064A2 ;
 }
 .text{
   margin: 15px;
@@ -101,3 +120,60 @@ footer{
   background:  #a0d2eb;
   
 }
+#beethoven {
+  border-radius: 20px 0px;
+  height: 450px;
+  width: 680px;
+  border: 5px solid black;
+  margin-top: 20px;
+}
+#trebel{
+  height: 50px;
+  width:50px;
+
+}
+h4{
+  color: #1d102c;
+  text-shadow: rgba(30,184,163,1) 0 0 3px;
+}
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+fieldset, label { margin: 0; padding: 0; }
+body{ margin: 20px; }
+h1 { font-size: 1.5em; margin: 10px; }
+
+/****** Style Star Rating Widget *****/
+
+.rating { 
+  float: left;
+}
+
+.rating > input { display: none; } 
+.rating > label:before { 
+  margin: 5px;
+  font-size: 1.25em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+}
+
+.rating > .half:before { 
+  content: "\f089";
+  position: absolute;
+}
+
+.rating > label { 
+  color: #ddd; 
+ float: right; 
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating > input:checked ~ label, /* show gold star when clicked */
+.rating:not(:checked) > label:hover, /* hover current star */
+.rating:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
+
+.rating > input:checked + label:hover, /* hover current star when changing rating */
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.rating > input:checked ~ label:hover ~ label { color: #FFED85;  } 
