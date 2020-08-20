@@ -10,7 +10,6 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "mocha": "^6.1.4",
-    "sequelize-cli": "^6.2.0",
     "supertest": "^4.0.2"
   },
   "dependencies": {
@@ -30,6 +29,7 @@
     "request": "^2.88.2",
     "rowdy-logger": "^1.0.2",
     "sequelize": "^5.8.12",
+    "sequelize-cli": "^6.2.0",
     "session": "^0.1.0"
   }
 }
