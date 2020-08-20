@@ -19,7 +19,16 @@ nav ul li {
   margin:0px;
   
 }
-
+.comment-area{
+  float: right;
+  position: relative;
+  bottom: 300px;
+}
+.main-comment{
+  width: 200px;
+  height: 150px;
+  background:  #a0d2eb;
+}
 
 
 img{
@@ -47,12 +56,13 @@ audio{
   
 }
 .comments{
+ 
   font-style: italic;
-  border: snow;
   width: 400px;
   height: 50px;
   margin: 0 auto;
-  
+  padding: 15px;
+
   
 }
     
@@ -74,11 +84,22 @@ footer{
 
 }
 .com-details{
-  float:right;
+  float:left;
+  position: relative;
+  bottom: 450px;
+  left: 150px;
   display: flex;
   flex-direction: column;
+  margin: 0 auto;
 }
 
 .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited, .nav-link:active {
   background-color: #8064A2 !important;
+}
+.text{
+  margin: 15px;
+  height: 30px;
+  text-align: justify;
+  background:  #a0d2eb;
+  
 }

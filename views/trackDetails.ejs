@@ -8,43 +8,40 @@
         <audio controls>
             <source src="<%=result.preview_url%>" />
         </audio>
+        <div class="faves">
+          <form method="POST" action="/track">
+            <input hidden type="text" name="name" value="<%= result.name %>">
+            <input type="text" name="trackId" value="<%=result.id%>" hidden>
+            <button class="btn btn-primary" type="submit">Add to Favorites</button>
+          </form>
+        </div>
 <% } else { %> 
     <div>track not found</div>
 <% } %> 
 
 <%comments.forEach(comment=>{%>
-  <h5 class="comments"><%=comment.name%>: <%=comment.content%></h5>
-  <form action="/comment/<%=result.id%>?_method=PUT" method="POST">
+  <div class="comment-area">
+    <h5 class="comments"><%=comment.name%>: <%=comment.content%></h5>
     
-     <input type="text" name="name" value="<%=comment.name%>" > <!--this will desplay Name for the input and-->
-     <input type="text" name="id" value="<%=comment.id%>" > <!--this will desplay Name for the input and-->
-    Comment: <input type="text" name="content" value="<%=comment.content%>">
-    <input type="text" name="trackId" value="<%=result.id%>" >
-    <button type="submit">Submit</button>
-  </form>
+    <form id="update" action="/comment/<%=result.id%>?_method=PUT" method="POST"> 
+      <input type="text" name="name" value="<%=comment.name%>" hidden> <!--this will desplay Name for the input and-->
+      <input type="text" name="id" value="<%=comment.id%>" hidden> <!--this will desplay Name for the input and-->
+      edit: <input class="text" type="text" name="content" value="<%=comment.content%>">
+      <input type="text" name="trackId" value="<%=result.id%>" hidden>
+      <button class="text" type="submit">Submit</button>
+    </form>
+  </div>
   
-<%})%>
-
-
-
-
-    <div class="faves">
-      <form method="POST" action="/track">
-        <input hidden type="text" name="name" value="<%= result.name %>">
-        <input type="text" name="trackId" value="<%=result.id%>" hidden>
-        <button class="btn btn-primary" type="submit">Add to Favorites</button>
-      </form>
-    </div>
+  <%})%>
   
-    <form class="com-details" action="/comment/<%=result.id%>" method="post">
-      Name: <input type="text" name="name"> <!--this will desplay Name for the input and-->
-     Comment: <input type="text" name="content"><!--this will display Comment before-->
-     <input type="text" name="trackId" value="<%=result.id%>" hidden><!--hidden text type-->
-     <button type="submit">Submit</button>
-     </form>
-     
-     
-
+  
 </div>
 <!-- put form -->
-  
+
+<form class="com-details" action="/comment/<%=result.id%>" method="post">
+ Name:<input class="input" type="text" name="name"  > <!--user name will be auto matic and hidden-->
+   Comment: <input class="main-comment" class="input" type="text" name="content"><!--this will display Comment before-->
+   <input type="text" name="trackId" value="<%=result.id%>" hidden><!--hidden text type-->
+   <button type="submit">Submit</button>
+</form>
+   
