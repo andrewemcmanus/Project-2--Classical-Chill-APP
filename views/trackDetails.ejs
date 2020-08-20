@@ -2,7 +2,7 @@
       
         <div>                 
             <h2>Work: <%=result.name%></h2> 
-            <h4>Artist: <%=result.artists[1].name%></h4> 
+            <h4>Artist: <%=result.artists[0].name%></h4> 
             <img src="<%=result.album.images[0].url%>"alt="hello">
         </div> 
         <audio controls>
@@ -18,7 +18,7 @@
 <% } else { %> 
     <div>track not found</div>
 <% } %> 
-
+<h2commentthresad></h2commentthresad>
 <%comments.forEach(comment=>{%>
   <div class="comment-area">
     <h5 class="comments"><%=comment.name%>: <%=comment.content%></h5>

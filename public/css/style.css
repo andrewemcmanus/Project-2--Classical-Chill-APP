@@ -4,7 +4,8 @@ body{
   color:#a0d2eb;
   text-align: center;
   text-decoration: none;
-  
+  background-image:"https://photos.google.com/search/_tra_/photo/AF1QipNEce_WoQOUObh8ef7S-OnHPqlS1HPhgcjP84P9";
+  ;
   
 }
 nav ul li {
@@ -19,11 +20,8 @@ nav ul li {
   margin:0px;
   
 }
-.comment-area{
-  float: right;
-  position: relative;
-  bottom: 300px;
-}
+
+
 .main-comment{
   width: 200px;
   height: 150px;
