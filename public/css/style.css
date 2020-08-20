@@ -1,7 +1,7 @@
 body{
   margin: 0 auto;
-  background-color: rgb(34, 31, 31);
-  color: white;
+  background-color: #494d58;
+  color:#a0d2eb;
   text-align: center;
   text-decoration: none;
   
@@ -11,22 +11,74 @@ nav ul li {
   text-decoration: none;
   display: inline-block;
   margin-right: .3em;
+ 
+}
+.nav{
+  background-color: #e5eaf5;
+  padding: 50px;
+  margin:0px;
+  
 }
 
-h1 {
-  color: chartreuse;
-}
+
+
 img{
   height: 300px;
   weight: 300px;
-  border: oldlace 3px groove;
+  border: rgb(26, 6, 39) 6px groove;
+  border-radius: 15px 0px;
   
 }
 h2 {
-  color: white;
+  color: #a0d2eb;
   text-decoration: none;
   font-size: 20px;
 }
 audio{
   margin: 10px;
+  
+}
+.navh{
+  background-color: rgb(37, 3, 68);
+  margin: 0 auto;
+  height:100px ;
+  text-align: center;
+  padding:20px;
+  
+}
+.comments{
+  font-style: italic;
+  border: snow;
+  width: 400px;
+  height: 50px;
+  margin: 0 auto;
+  
+  
+}
+    
+.faves{
+  margin: 10px;
+}
+button{
+  background: #e5eaf5;
+}
+footer{
+  background-color: #e5eaf5;
+  
+}
+.fa-{
+  
+  width: 60px;
+  line-height: 60px;
+  margin: 10px;
+
+}
+.com-details{
+  float:right;
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited, .nav-link:active {
+  background-color: #8064A2 !important;
 }

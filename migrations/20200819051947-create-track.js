@@ -1,24 +1,24 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('comments', {
+    await queryInterface.createTable('tracks', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name: {
+      composer: {
         type: Sequelize.STRING
       },
-      content: {
+      imageUrl: {
         type: Sequelize.STRING
       },
-      userId: {
-        type: Sequelize.INTEGER
+      apiTrackId: {
+        type: Sequelize.STRING
       },
-      trackId: {
-        type: Sequelize.INTEGER
+      genre: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
@@ -31,6 +31,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('comments');
+    await queryInterface.dropTable('tracks');
   }
 };

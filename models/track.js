@@ -11,14 +11,13 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      models.track.hasMany(models.comment)
       models.track.belongsToMany(models.user,{through: "usersTracks"})
     }
   };
   track.init({
     composer: DataTypes.STRING,
     imageUrl: DataTypes.STRING,
-    trackId: DataTypes.STRING,
+    apiTrackId: DataTypes.STRING,
     genre: DataTypes.STRING
   }, {
     sequelize,

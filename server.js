@@ -6,13 +6,14 @@ const session = require('express-session');
 const SECRET_SESSION = process.env.SECRET_SESSION;
 const passport = require('./config/ppConfig');
 const flash = require('connect-flash');
+const methodOverride = require('method-override')
 
 require('./utilities/spotifyApi')
 //require the authorizarization middleware at the top of the page
 const isLoggedIn = require('./middleware/isLoggedIn')
 
 app.set('view engine', 'ejs');
-
+app.use(methodOverride('_method'));
 app.use(require('morgan')('dev'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(__dirname + '/public'));
@@ -48,14 +49,13 @@ app.get('/', (req, res) => {
   res.render('index', { alerts: req.flash() });
 });
 
-app.get('/profile', isLoggedIn, (req, res) => {
-  res.render('profile')
-});
+
 
 app.use('/auth', require('./routes/auth'));
-app.use('/track', require('./routes/track'));//mounting 
-// app.use('/comment', require('./routes/comment'))
-app.use('/faves', require('./routes/faves')) 
+app.use('/track', isLoggedIn, require('./routes/track'));//mounting 
+app.use('/comment', isLoggedIn, require('./routes/comment'))
+app.use('/profile', isLoggedIn, require('./routes/profile'))
+
 
 
 const port = process.env.PORT || 3000;

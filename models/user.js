@@ -12,7 +12,6 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-
       models.user.belongsToMany(models.track, {through: "usersTracks"})
       models.user.hasMany(models.comment)
     }
@@ -72,5 +71,3 @@ module.exports = (sequelize, DataTypes) => {
   return user;
   
 };
-
-//user js to routes

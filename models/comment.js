@@ -11,7 +11,6 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      models.comment.belongsTo(models.track)
       models.comment.belongsTo(models.user)
     }
   };
@@ -19,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING,
     content: DataTypes.STRING,
     userId: DataTypes.INTEGER,
-    trackId: DataTypes.INTEGER
+    apiTrackId: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'comment',

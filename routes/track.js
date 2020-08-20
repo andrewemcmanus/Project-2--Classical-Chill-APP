@@ -79,9 +79,14 @@ router.get('/:id', (req, res)=>{
                 .then((response)=> {
             console.log('line 71', response.data.album.images[0])
             let result = response.data
-            console.log(result)
-            // console.log(result.album.images[0])
-            res.render('trackDetails', {result} )
+                console.log(result)
+            db.comment.findAll({
+                where: {apiTrackId: req.params.id}//line 74
+            }).then((comments)=>{
+                res.render('trackDetails', {comments, result})//render found comments db query and result
+            })
+            
+           
             }).catch(err=>{
                 // console.log('error', err)
             })
@@ -90,41 +95,55 @@ router.get('/:id', (req, res)=>{
         }
     })
 })
-router.get('/', (req, res)=> {
-    db.track.findAll()
-    .then(response =>{
-        res.render('profile', {response})
-    })
-})
 
-router.post('/', (req, res) => {
-    console.log('line 101', req.body)
-    db.track.findOrCreate({
-        where: {name: req.body.name },
-         defaults: {trackid: req.body.trackId}
+
+
+//save favs
+router.post('/', (req, res)=>{
+    db.track.findOrCreate({ //so i do not duplicate
+        where: {apiTrackId: req.body.trackId},
+        defaults: {composer: req.body.name}
+    }).then(([track, created])=>{
+       //find user and add track to them
+       db.user.findOne({
+           where:{id: req.user.id}//find user id
+       })
+        .then(user => {
+            user.addTrack(track)
+            .then(()=>{
+
+                res.redirect('/profile')//redirect to profile
+            })
+
+        })
+        .catch(err=>{
+            console.log('Error', err)
+        })
+    }).catch(err=>{
+        console.log("error", err)
     })
-    .then(([response, created]) => {
-            res.redirect('profile');
-            
-            
-    })
-    .catch(err =>{
-        console.log('error', err);
-        res.send('sorry nodata');
-    })
-}) 
-// var options = {
-    //   'method': 'GET',
-    //   'url': 'https://api.spotify.com/v1/search?query=beethoven&type=artist&offset=0&limit=20',
-    //   'headers': {
-        //     'Authorization': 'Bearer BQC8yadbNZt4N-18ItdDmfgqgpOX2Rp2mPTiSI531AuxJTncRVGEL_uNkWpi9naKl9Z5cPgBNe7SenC49TY'
-//   }
-// };
-// request(options, function (error, response) {
-//   if (error) throw new Error(error);
-//   console.log(response.body);
-// });
+
+})
+router.delete('/:id', async(req, res)=>{
+    try{
+      await db.usersTracks.destroy({ 
+        where: {
+          userId: req.user.id,
+          trackId: req.params.id
+        },
+        
+      });
+      res.redirect("/profile")
+    }catch(err){
+      console.log('Error:', err) // render error
+      
+  }
+
+  });
+
+
+
 module.exports =router
 
   
-  
+

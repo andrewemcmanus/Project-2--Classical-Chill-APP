@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Classical Chill</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>
@@ -14,19 +16,35 @@
    </main>
     <header>
       <nav>
-        <ul>
+        <H1 class="navh">Classical Chill</H1>
+        <ul class="nav nav-pills">
           <% if (!currentUser) {%>
-
-            <li><a href="/auth/signup">Signup</a></li>
-            <li><a href="/auth/login">Login</a></li>
+             
+              <li class="nav-item">
+                <a class="nav-link active" href="/auth/signup">Signup</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/auth/login">Login</a>
+              </li>
             <% } else { %>
-          <li><a href="/auth/logout">Logout</a></li>
-          <li><a href="/profile">Profile</a></li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/auth/logout">Logout</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/profile">Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/">Search</a>
+              </li>
+            </ul>
+            
             <% } %>
-        </ul>
       </nav>
     </header>
     <h1></h1>
     <%- body %>
+    
+    <a href="#" class="fa fa-facebook"></a>&nbsp;&nbsp;
+  <a href="#" class="fa fa-twitter"></a>
   </body>
-</html>
+  </html>
