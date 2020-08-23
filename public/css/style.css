@@ -1,10 +1,10 @@
 body{
   margin: 0 auto;
-  background-image: url("https://lh3.googleusercontent.com/2cpROluvQz_Gm428idtdeCCgxdFUzv6yx8SymwwD7i1Tsmojr_SVMcGqaSDMB-ju6HwIFt37eDYF0fqMg_N08q_T_0-BQ8Y8Eg3V3R6HWf1NeR1FXX5enmsyiYWuwcZe1zWOps4xcqsqqM_Yop-idVyCCSwVLiGpQ0hW-4sF_4T6LMUzsHZy9qswhCq80qLMM7wQg5NfyKheI4FKnF6xgGfsxmMUlEykMu36XFyQ9AHDyvYX06ZmGRihcNsCph0LUvjunrs4L6g0J_bwhkk2OJLY7osUonLuU4w3H2HYUjKF-TOqDOv9kWlPGpEYTu-1-xvlywt9Ha1Q2t0mVyMoafOKplZOELbiUK_7yT6tYQfOEEHOK0fyafLXH4TGhfFWKbgLaxQ8nnHA84SfCnVNVE_4rFV3eighoTf-qJJ3bvHMgzRMPmYhECRHGTdwxCfWtnaMvoDWpajF1TlFcHw8LTi88_AMNwZn-mHIpzqhw54gxDxTHpsSRRLAeUqFrNqO8uFRxjOdFKe__iWm_7mwDtB4eE3K0oTAINj4PNo4YwH7jRwXisU2jnF5QWOvF6PQACMpEPA5PLKEPZKBhCJwuj_Y3drfq862Z6qHNOBmhCVz6iThSNvLFGcdizgpcq33j9Kb66-8DfyQzpLyI6Gk6J51Vm2ia-Nb189UIREfrFw17czokep1P7aoJr30=w1472-h921-no?authuser=0");
+  background-image: url("https://lh3.googleusercontent.com/2v6qo4HurMjVhuH_JoK9qLcS_w-OmBwapVnEioYFy8QItFg-CUBQZzc5yQZYm5M2rII44F1F9-vffGyZg3BZ8CD82E9WeRGNmL99zJsX3t1Iw6m78A5LsWQ2_dKVjf2AyzS_PM9iB8ENCwwG-3WpNVNDZyqIfbuMQVQO4z4IgR39f4Syjb87_sRCEl-LeNEpsRQtVlD2bue0-9x6wzuzqWmwLQZRr21octkhOylPz26HE1h7fFWUZkmD80fCs-OqP_LFZb2poKFfiit2661G2DFlcwmQDenFslKJO5E7dEd6kBJlxfkON96AL6FzUOSogPEhKXwAAoj5mzzwWmcJZOqsXOJbkEdJ9CTWku4pEpbLfF1-x-nXEob0ZLi9myULLbv-3oNWuvJvb-fIFUWCjLxzKkEY2lSwMiZKspaPULQX1b7DR_JoI6qiKPWGDo8AxqX7e0ZZAMNni-vT65d9pRhEbJXdoI-mBSTw37oNt6ttdkiE2A-abDygJAHMyZqg0GoUYuXEtzzdkV9zT4I3OKk91vBW-aHdfQ_6WOEJVhoYfCpF3KgP22_d6Zhw9VbmDYYZjL8025EinyA9hiG-CVR3gBFnmSKZ2aOSq5Qc5e7NoxCzm6dEeZPKbVBVEVGvOf80Rb07cIjNQLV_qoOdmYBEFuSvQk-F2oziGl_F9bJq8xud87pFd1lxx5uJ=w1472-h920-no?authuser=0");
   background-repeat: no-repeat;
   background-size: cover;
-  color: #d1e8f3;
-  text-shadow: #0d3453 px 4px 7px;
+  color: #e3eff5;
+  text-shadow: #0d3453 2px 4px 7px;
   text-align: center;
   text-decoration: none;
   font-family: harbour;
@@ -55,8 +55,8 @@ label{
   
 }
 h2 {
-  color: #9cdae2;
-  text-shadow: rgb(37, 3, 68) 3px 5px 7px;
+  color: #e3eff5;
+  text-shadow: #0d3453 7px 7px 7px;
   text-decoration: none;
   font-size: 26px;
   margin: 20px;
@@ -132,8 +132,8 @@ footer{
 
 }
 h4{
-  color: #1d102c;
-  text-shadow: rgba(30,184,163,1) 0 0 3px;
+  color: #e3eff5;
+  text-shadow: #0d3453 2px 4px 7px;
 }
 
 

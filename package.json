@@ -31,6 +31,7 @@
     "rowdy-logger": "^1.0.2",
     "sequelize": "^5.8.12",
     "sequelize-cli": "^6.2.0",
-    "session": "^0.1.0"
+    "session": "^0.1.0",
+    "star-ratings": "^1.0.0"
   }
 }
