@@ -56,8 +56,9 @@ app.use('/track', isLoggedIn, require('./routes/track'));//mounting
 app.use('/comment', isLoggedIn, require('./routes/comment'))
 app.use('/profile', isLoggedIn, require('./routes/profile'))
 
-
-
+app.get('*', function(req, res){
+  res.render('404');
+});
 const port = process.env.PORT || 3000;
 const server = app.listen(port, () => {
   console.log(`🎧 You're listening to the smooth sounds of port ${port} 🎧`);
