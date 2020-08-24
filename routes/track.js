@@ -98,7 +98,7 @@ router.get('/:id', (req, res)=>{
 
 
 
-//save favs
+//save faves
 router.post('/', (req, res)=>{
     db.track.findOrCreate({ //so i do not duplicate
         where: {apiTrackId: req.body.trackId},

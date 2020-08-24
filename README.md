@@ -2,14 +2,23 @@
 ### a classical music piece favorites and discussion app.
 <br />
 
-to refernece the wireframes go to: 
+to reference the Wireframes go to: 
+* signup/login page:(https://whimsical.com/SUdBysntPWDVYGPPfcp5R9)
+* profile/index : (https://whimsical.com/VbQcfPHkRP29ADcCfwFZg1)
+* results?details: (https://whimsical.com/5VLk8iv4AanmGxePXKSrEF)
+<br/>
+<br/>
+
+
+
+
 ## How to use the Classical Chill app
 
 1.  Signup - At the login screen you will choose the sign up button in the top left. to sign up you must enter an email, name, and password with a minimum of 8 characters.
 
 2.  Login - Once the new user profile is saved, you will be directed to the login screen. Login with your information.
 
-3.  Search - after login you will be directed to a search pge where you will search for a music piece( work) by composer and name of the music piece. When a successful search is done there will be a list of relevant search items, chose one to view details on the particular music piece .
+3.  Search - after login you will be directed to a search pge where you will search for a music piece( work) by composer and name of the music piece. When a successful search is done there will be a list of relevant search items, chose one to view details on the particular music piece.
 
 4.   Track Details- browse through the track details. you can listen to the music, comment on the piece and see other users' comments as well. you can also save ech track to your profile favorites. from your profile you can click each l;ink of your favorite track and be redirected ba that track again. 
 
@@ -153,12 +162,12 @@ e.g.
 
 ### Run the migrations
 
-```js
+```
 sequelize db:migrate
 
 ```
 if you want to undo migrations for any changes, run:
-```js
+```
 sequelize db:migrate:undo:all
 
 ```
