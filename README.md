@@ -2,6 +2,7 @@
 ### a classical music piece favorites and discussion app.
 <br />
 
+to refernece the wireframes go to: 
 ## How to use the Classical Chill app
 
 1.  Signup - At the login screen you will choose the sign up button in the top left. to sign up you must enter an email, name, and password with a minimum of 8 characters.
@@ -15,14 +16,47 @@
 5. signup, login, logout, you can select signup and login at any time and logout anytime you are already logged in. These options at anytime
 
 
+#### technologies used
+* html
+* css
+* js
+* node js
+* express
+* sequelize
+* postman
+* express-cli
+* chai
+* mocha
+* supertest
+* axios
+* bcrypt
+* connect-flash
+* dotenv
+* ejs
+* express-ejs-layouts
+* express-session
+* method-override
+* moment
+* morgan
+* passport
+* passport-local
+* pg
+* request
+* rowdy-logger
+* sequelize
+* sequelize-cli
+* session
+    
+
 
 
 
 
 Project 2 will be built on the express auth boilerplate. next we will build our models with the proper columns displayed below:
 
-## Build Models
 
+## Build Models
+to reference the ERD (https://whimsical.com/NjovwqZyDcDXrDEALYW8Ny)
 ### Track Model
 
 | Column | Data Type | 
@@ -134,7 +168,9 @@ sequelize db:migrate:undo:all
 nodemon
 ```
 
-# Controllers and Views
+### Controllers and Views
+<br/>
+
 ## Views
 create profile.ejs, trackDetails.ejs, and trackResults.ejs
 <br/>
@@ -152,6 +188,9 @@ profile.ejs- will store the ejs for a list of my favorites and the Delete track 
           </div>
 <%});%>
 ```
+#### trackResults.ejs
+<br/>
+
 trackResults.ejs - will store ejs to display the results of my search the got to my '/track' page.
 ```js
 <% if (tracks) { %> 
@@ -170,6 +209,8 @@ trackResults.ejs - will store ejs to display the results of my search the got to
 ```
 <br/>
 
+#### trackDetails.js
+<br/>
 
 trackDetails.ejs - will store ejs for track details from the data tha comes from the Spotify API , the comment form, the comment update and delete forms, and the audio tag. 
 ```js
@@ -221,8 +262,8 @@ trackDetails.ejs - will store ejs for track details from the data tha comes from
    <button type="submit">Submit</button>
 </form>  
 ```
-## Controllers 
-create controllers, track.js, and comment.j
+#### Controllers 
+create controllers, track.js, and comment.js
 <br/>
 
 Rememeber when you make your controllers to require them in your server.js like this:
@@ -256,13 +297,13 @@ also do not forget to export your modules at the bottom of the page:
 module.exports =router
 ```
 
-## Using the Spotify API
+#### Using the Spotify API
 The spotify API is a bit difficult to access, because it requires OAUTH, which enables apps to obtain limited access (scopes) to a user's data without giving away a user's password. Therefore you must add a few extra steps in recieving back a specialized token from calling the Spotify API a certain way.
 
 1. sign up at (https://developer.spotify.com/dashboard/) and create a new app so you can get a CLIENT_ID and SECRET_ID. copy and paste both in the .env file.
 
 
-### Spotify Authorzation and API calls
+#### Spotify Authorzation and API calls
 we will need to access the API and get a bearer token back which gets renewed.
 ```js
 router.get('/', (req, res)=>{
@@ -350,7 +391,7 @@ router.get('/:id', (req, res)=>{
 })
 ```
 
-### create and delete tracks
+#### create and delete tracks
 ``` js
 router.post('/', (req, res)=>{
     db.track.findOrCreate({ 
@@ -394,7 +435,7 @@ router.delete('/:id', async(req, res)=>{
 
   });
 ```
-### comment.js
+#### comment.js
   comment.js - will store my create comment, update comment, and delete routes.
 
   Create comment post route
@@ -452,9 +493,20 @@ router.delete("/:id", (req, res)=>{
         res.redirect(`/track/${req.body['track-id']}`);
       });
    ```
-### Future Goals
- A 5- star rating feature. This will be a bit more complicated. the logic require adding more models. a it may take some time.
+   ### CSS STYLING
+   I chose bootstrap for the nav bar buttons and  
+   I chose a favorite background picture of mine and matched the color scheme from different color palettes from various websites such as : (https://hookagency.com/website-color-schemes/), (https://www.color-hex.com/color-palettes/), (https://coolors.co/palettes/trending), and more. its important that you edit your background photo to take a bit of brightness out of it so you can read the text against it. the main photo of beethoven (played by Gary Oldman) is from one of my favorite films called 'Immortal Beloved', a beautiful and cathartic biography of Ludwig Van Beethoven's life and music. 
+#### Future Goals
+ * A 5- star rating feature. This will be a bit more complicated. the logic require adding more models. a it may take some time.
 
- Profile name already in the form, while submitting a comment.
+ * Profile name already in the form, while submitting a comment.
 
- limiting to only searching the classical music genre through spotify.
+ * limiting to only searching the classical music genre through spotify.
+
+
+ ## Heroku Url
+ URL=(https://git.heroku.com/classical-nick.git)
+<br/>
+
+ ## To ALL teaching staff, thank you for your help this week! couldn't have done it without you all!
+ 
