@@ -54,37 +54,8 @@ router.delete("/:id", (req, res)=>{
         
         res.redirect(`/track/${req.body['track-id']}`);
       });
-    // db.comment.destroy({//delete comment
-    //     name: req.body.name,
-    //     content: req.body.content,
-        
-    // },{
-
-    //     where:{id: req.body.id}//open
-    // }).then(response=>{
-    //     console.log(response)
-    //     res.redirect(`/track/${req.params.id}`)
-    // }).catch(err=>{
-    //     console.log("error", err)
-    // })
+   
 })
-
-
-// db.track.findOne({
-//   where: { id: 1 },
-//   include: [db.comment]
-// }).then(function(track) {
-  
-//   console.log(track.comment)
-// })
-
-// db.track.findAll({
-//   where: {id: 1},
-//   include: [db.comment]
-// })
-// .then(track=>{
-//   console.log(track.comments)
-// })
 
 
 module.exports =router

@@ -2,7 +2,7 @@
 ### a classical music piece favorites and discussion app.
 <br />
 
-to reference the Wireframes go to: 
+To reference the Wireframes go to: 
 * signup/login page:(https://whimsical.com/SUdBysntPWDVYGPPfcp5R9)
 * profile/index : (https://whimsical.com/VbQcfPHkRP29ADcCfwFZg1)
 * results?details: (https://whimsical.com/5VLk8iv4AanmGxePXKSrEF)
@@ -65,7 +65,7 @@ Project 2 will be built on the express auth boilerplate. next we will build our 
 
 
 ## Build Models
-to reference the ERD (https://whimsical.com/NjovwqZyDcDXrDEALYW8Ny)
+To reference the ERD (https://whimsical.com/NjovwqZyDcDXrDEALYW8Ny)
 ### Track Model
 
 | Column | Data Type | 
@@ -75,8 +75,8 @@ to reference the ERD (https://whimsical.com/NjovwqZyDcDXrDEALYW8Ny)
 | apiTrackId | String 
 | password | String 
 |-------------------|------------- |
-### associations:
-place following association, to state users and tracks are joined through usersTracks join model
+### Associations:
+Place following association, to state users and tracks are joined through usersTracks join model
 ```js
 models.track.belongsToMany(models.user,{through: "usersTracks"})
 ```
@@ -89,8 +89,8 @@ models.track.belongsToMany(models.user,{through: "usersTracks"})
 | password | String 
 
 |-------------------|------------- |
-### associations:
-user and tracks n:m are joined through usersTracks and user has many comments 1:M
+### Associations:
+user and track n:m are joined through usersTracks and user has many comments 1:M
 ```js
  models.user.belongsToMany(models.track, {through: "usersTracks"})
       models.user.hasMany(models.comment)
@@ -106,7 +106,7 @@ user and tracks n:m are joined through usersTracks and user has many comments 1:
 | apiTrackId | String
 | userId| Integer
 |-------------------|------------- |
-### associations:
+### Associations:
 ```js
 models.comment.belongsTo(models.user)
 ```
@@ -118,8 +118,8 @@ models.comment.belongsTo(models.user)
 | userId| Integer 
 | trackId | Integer
 |-------------------|------------- |
-### associations:
-join user and track models through this model
+### Associations:
+Join user and track models through this model
 
 <br/>
 
@@ -129,6 +129,8 @@ join user and track models through this model
 ```
 npm install or npm i
 ```
+<br/>
+
 
 ### Create a new database for the new project
 
@@ -137,6 +139,9 @@ Using the sequelize command line interface, you can create a new database from t
 ```
 createdb <name>
 ```
+<br/>
+
+
 In config file, remove default info leaving only the important displayed
 e.g.
 ```js
@@ -166,16 +171,22 @@ e.g.
 sequelize db:migrate
 
 ```
+
+
 if you want to undo migrations for any changes, run:
 ```
 sequelize db:migrate:undo:all
 
 ```
+<br/>
+
 ###  Run nodemon to  make sure it works
 
 ```
 nodemon
 ```
+<br/>
+
 
 ### Controllers and Views
 <br/>
@@ -197,6 +208,8 @@ profile.ejs- will store the ejs for a list of my favorites and the Delete track 
           </div>
 <%});%>
 ```
+<br/>
+
 #### trackResults.ejs
 <br/>
 
@@ -221,8 +234,9 @@ trackResults.ejs - will store ejs to display the results of my search the got to
 #### trackDetails.js
 <br/>
 
+
 trackDetails.ejs - will store ejs for track details from the data tha comes from the Spotify API , the comment form, the comment update and delete forms, and the audio tag. 
-```js
+```html
 <% if (result) { %> 
         <div>                 
             <h2>Work: <%=result.name%></h2> 
@@ -301,19 +315,23 @@ let buff = new Buffer.from(`${process.env.CLIENT_ID}:${process.env.CLIENT_SECRET
 let authKey = buff.toString('base64');// changes authKey to string because Spotify
 
 ```
-also do not forget to export your modules at the bottom of the page:
+Also, do not forget to export your modules at the bottom of the page:
 ```js
 module.exports =router
 ```
+<br/>
+
 
 #### Using the Spotify API
 The spotify API is a bit difficult to access, because it requires OAUTH, which enables apps to obtain limited access (scopes) to a user's data without giving away a user's password. Therefore you must add a few extra steps in recieving back a specialized token from calling the Spotify API a certain way.
 
 1. sign up at (https://developer.spotify.com/dashboard/) and create a new app so you can get a CLIENT_ID and SECRET_ID. copy and paste both in the .env file.
+<br/>
+
 
 
 #### Spotify Authorzation and API calls
-we will need to access the API and get a bearer token back which gets renewed.
+We will need to access the API and get a bearer token back which gets renewed.
 ```js
 router.get('/', (req, res)=>{
     axios.post('https://accounts.spotify.com/api/token', 
@@ -352,8 +370,10 @@ router.get('/', (req, res)=>{
     })
 })
 ```
+<br/>
+
 #### axios call to the api
-you have to include your auth gathering code at the beginning to be able to access this as well.
+You have to include your auth gathering code at the beginning to be able to access this as well.
 ```js
 router.get('/:id', (req, res)=>{
     axios.post('https://accounts.spotify.com/api/token',
@@ -399,6 +419,8 @@ router.get('/:id', (req, res)=>{
     })
 })
 ```
+<br/>
+
 
 #### create and delete tracks
 ``` js
@@ -444,6 +466,8 @@ router.delete('/:id', async(req, res)=>{
 
   });
 ```
+<br/>
+
 #### comment.js
   comment.js - will store my create comment, update comment, and delete routes.
 
@@ -487,6 +511,8 @@ router.put("/:id", (req, res)=>{
     })
 })
 ```
+<br/>
+
 #### delete comment delete route
 ```js
 router.delete("/:id", (req, res)=>{
@@ -502,15 +528,21 @@ router.delete("/:id", (req, res)=>{
         res.redirect(`/track/${req.body['track-id']}`);
       });
    ```
+   <br/>
+
    ### CSS STYLING
-   I chose bootstrap for the nav bar buttons and  
+   
    I chose a favorite background picture of mine and matched the color scheme from different color palettes from various websites such as : (https://hookagency.com/website-color-schemes/), (https://www.color-hex.com/color-palettes/), (https://coolors.co/palettes/trending), and more. its important that you edit your background photo to take a bit of brightness out of it so you can read the text against it. the main photo of beethoven (played by Gary Oldman) is from one of my favorite films called 'Immortal Beloved', a beautiful and cathartic biography of Ludwig Van Beethoven's life and music. 
+   <br/>
+
 #### Future Goals
  * A 5- star rating feature. This will be a bit more complicated. the logic require adding more models. a it may take some time.
 
  * Profile name already in the form, while submitting a comment.
 
  * limiting to only searching the classical music genre through spotify.
+ <br/>
+
 
 
  ## Heroku Url
