@@ -9,6 +9,8 @@ To reference the Wireframes go to:
 <br/>
 <br/>
 
+To reference the ERD (https://whimsical.com/NjovwqZyDcDXrDEALYW8Ny)
+
 
 
 
@@ -64,8 +66,9 @@ To reference the Wireframes go to:
 Project 2 will be built on the express auth boilerplate. next we will build our models with the proper columns displayed below:
 
 
-## Build Models
-To reference the ERD (https://whimsical.com/NjovwqZyDcDXrDEALYW8Ny)
+## Models
+<br/>
+
 ### Track Model
 
 | Column | Data Type | 
